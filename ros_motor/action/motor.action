@@ -1,0 +1,10 @@
+#goal
+float32 xiniz
+float32 xfin
+float32 vel
+---
+#result
+float32 pos_finale
+---
+#feedback
+float32 xc
