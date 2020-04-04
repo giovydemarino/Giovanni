@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+
+<robot name="kukaibra800" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="$(find ros_kuka)/urdf/kukaibra800macro.xacro" />
+	
+			<xacro:kuka_tilt_link name="l0">
+			<geometry>
+				<box size="1 0.02 0.05"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:kuka_tilt_link>
+	
+	<xacro:kuka_joint
+			name="j0"
+			type="prismatic"
+			parent="l0"
+			child="base_link"
+			rangeup ="-0.5"
+			rangelow="0.5"
+			limit="176"
+			velocity="98">
+			<origin xyz="0 0 0" />
+			<axis xyz="1 0 0"/>
+		</xacro:kuka_joint>
+
+	<xacro:base_link_macro 
+			base_link_name="base_link">
+		</xacro:base_link_macro>
+
+		<xacro:kuka_joint
+			name="j1"
+			type="revolute"
+			parent="base_link"
+			child="l1"
+			rangeup ="+2.96"
+			rangelow="-2.96"
+			limit="176"
+			velocity="98">
+			<origin xyz="0 0 0.2" />
+			<axis xyz="0 0 1"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_tilt_link name="l1">
+			<geometry>
+				<cylinder length="0.2" radius="0.2"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:kuka_tilt_link>
+
+		<xacro:kuka_joint
+			name="j2"
+			type="revolute"
+			parent="l1"
+			child="l2"
+			rangeup ="+2.09"
+			rangelow="-2.09"
+			limit="176"
+			velocity="98">
+			<origin xyz="0.4 0 0" />
+			<axis xyz="1 0 0"/>
+		</xacro:kuka_joint>
+
+
+		<xacro:kuka_tilt_link name="l2">
+			<geometry>
+				<cylinder length="0.2" radius="0.2"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:kuka_tilt_link>
+
+		<xacro:kuka_joint
+			name="j3"
+			type="revolute"
+			parent="l2"
+			child="l3"
+			rangeup ="+2.96"
+			rangelow="-2.96"
+			limit="110"
+			velocity="100">
+			<origin xyz="0 0 0.2" />
+			<axis xyz="0 0 1"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_tilt_link name="l3">
+			<geometry>
+				<cylinder length="0.2" radius="0.2"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:kuka_tilt_link>
+		
+		<xacro:kuka_joint
+			name="j4"
+			type="revolute"
+			parent="l3"
+			child="l4"
+			rangeup ="+2.09"
+			rangelow="-2.09"
+			limit="110"
+			velocity="130">
+			<origin xyz="-0.4 0 0" />
+			<axis xyz="1 0 0"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_tilt_link name="l4">
+			<geometry>
+				<cylinder length="0.2" radius="0.2"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:kuka_tilt_link>
+
+		<xacro:kuka_joint
+			name="j5"
+			type="revolute"
+			parent="l4"
+			child="l5"
+			rangeup ="+2.96"
+			rangelow="-2.96"
+			limit="110"
+			velocity="140">
+			<origin xyz="0 0 0.2" />
+			<axis xyz="0 0 1"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_tilt_link name="l5">
+			<geometry>
+				<cylinder length="0.2" radius="0.2"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:kuka_tilt_link>
+		
+		<xacro:kuka_joint
+			name="j6"
+			type="revolute"
+			parent="l5"
+			child="l6"
+			rangeup ="+2.09"
+			rangelow="-2.09"
+			limit="40"
+			velocity="180">
+			<origin xyz="0.4 0 0" />
+			<axis xyz="1 0 0"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_tilt_link name="l6">
+			<geometry>
+				<cylinder length="0.2" radius="0.2"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:kuka_tilt_link>
+
+		<xacro:kuka_joint
+			name="j7"
+			type="revolute"
+			parent="l6"
+			child="l7"
+			rangeup ="+3.05"
+			rangelow="-2.05"
+			limit="40"
+			velocity="180">
+			<origin xyz="0 0 0.2" />
+			<axis xyz="0 0 1"/>
+		</xacro:kuka_joint>
+
+		<xacro:kuka_tilt_link name="l7">
+			<geometry>
+				<cylinder length="0.2" radius="0.2"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:kuka_tilt_link>
+
+</robot>
